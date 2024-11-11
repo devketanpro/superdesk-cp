@@ -20,6 +20,7 @@ from superdesk.default_settings import (
     SERVER_URL,
     CORE_APPS as _core_apps,
     CELERY_BEAT_SCHEDULE,
+    NINJS_COMMON_RENDITIONS,
     timedelta,
 )
 
@@ -60,6 +61,8 @@ RENDITIONS = {
         "viewImage": {"width": 200, "height": 200},
     },
 }
+
+NINJS_COMMON_RENDITIONS.append("square")
 
 WS_HOST = env("WSHOST", "0.0.0.0")
 WS_PORT = env("WSPORT", "5100")
