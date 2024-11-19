@@ -60,6 +60,17 @@ RENDITIONS = {
     },
 }
 
+if strtobool(env("EXTRA_RENDITIONS", "true")):
+    RENDITIONS["picture"].update(
+        {
+            "SVGA": {"width": 800, "height": 600},
+            "XGA": {"width": 1024, "height": 768},
+            "HD 1080p": {"width": 1920, "height": 1080},
+        }
+    )
+
+NINJS_COMMON_RENDITIONS = list(RENDITIONS["picture"].keys())
+
 WS_HOST = env("WSHOST", "0.0.0.0")
 WS_PORT = env("WSPORT", "5100")
 
